@@ -19,6 +19,7 @@ Docker container that periodically syncs one S3 bucket to another S3 bucket usin
 * `-e SOURCE_BUCKET_PATH=<SOURCE_BUCKET_PATH>`: The path of your s3 bucket where the files should be synced FROM (must start with a slash), defaults to "/" to sync to bucket root
 * `-e DESTINATION_BUCKET_PATH=<DESTINATION_BUCKET_PATH>`: The path of your s3 bucket where the files should be synced TO (must start with a slash), defaults to "/" to sync to bucket root
 * `-e PARAMS=`: parameters to pass to the sync command ([full list here](http://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)).
+* `-e MAX_CONCURRENT_REQUESTS=10`: number of concurrent requests to process 10-200.
 * `-e CRON_SCHEDULE="0 1 * * *"`: specifies when cron job starts ([details](http://en.wikipedia.org/wiki/Cron)), defaults to `0 1 * * *` (runs every night at 1:00).
 * `now`: run container once and exit (no cron scheduling).
 
